@@ -1,4 +1,4 @@
-# Belajar CodeIgnite
+# Belajar CodeIgniter 4 untuk Pemula
 
 Framework CodeIgniter sangat cocok untuk kamu yang baru belajar pengembangan web dengan PHP. Dengan arsitektur MVC (Model-View-Controller), CodeIgniter membantu kamu menulis kode lebih terstruktur dan mudah dipelihara.
 
@@ -133,3 +133,78 @@ public $default = [
 Pastikan nama database sudah dibuat di phpMyAdmin.
 
 ---
+
+## 8. Model
+
+Model digunakan untuk berinteraksi dengan database. File model disimpan di:
+
+```
+app/Models/
+```
+
+Contoh Model:
+
+```php
+namespace App\Models;
+use CodeIgniter\Model;
+
+class MahasiswaModel extends Model {
+    protected $table = 'mahasiswa';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['nama', 'nim'];
+}
+```
+
+Model ini akan digunakan untuk operasi database seperti insert, update, delete, dan get.
+
+---
+
+## 9. CRUD Sederhana
+
+Berikut contoh fungsi di Controller `Mahasiswa.php` untuk operasi CRUD:
+
+### Menambahkan data:
+
+```php
+public function create() {
+    $model = new \App\Models\MahasiswaModel();
+    $model->save([
+        'nama' => 'Budi',
+        'nim' => '12345'
+    ]);
+}
+```
+
+### Menampilkan data:
+
+```php
+public function read() {
+    $model = new \App\Models\MahasiswaModel();
+    $data['mahasiswa'] = $model->findAll();
+    return view('tampil_mahasiswa', $data);
+}
+```
+
+---
+
+## 10. Fitur Tambahan yang Bisa Dipelajari
+
+Setelah memahami dasar-dasar, kamu bisa lanjut belajar fitur berikut:
+- Validasi Formulir
+- Autentikasi dan Session
+- Upload File
+- Pagination
+- AJAX dan jQuery
+- REST API dengan CI4
+
+---
+
+## Tips Belajar Efektif
+
+- Mulailah dari project kecil seperti CRUD Mahasiswa.
+- Gunakan XAMPP atau Laragon untuk server lokal.
+- Simpan project kamu di GitHub sebagai portofolio.
+- Ikuti dokumentasi resmi: https://codeigniter4.github.io/userguide/
+
+---
+
