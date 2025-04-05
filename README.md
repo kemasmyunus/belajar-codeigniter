@@ -60,3 +60,29 @@ $routes->get('/halo', 'Halo::index');
 Artinya, ketika pengguna membuka `localhost/halo`, maka controller `Halo` akan memanggil method `index()`.
 
 ---
+
+## 5. Controller
+
+Controller bertanggung jawab mengatur alur logika aplikasi.
+File controller disimpan di:
+
+```
+app/Controllers/
+```
+
+Contoh Controller:
+
+```php
+namespace App\Controllers;
+
+class Halo extends BaseController {
+    public function index() {
+        return view('halo_view');
+    }
+}
+```
+
+Controller di atas akan memuat view bernama `halo_view.php`.
+
+---
+
