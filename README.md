@@ -28,3 +28,35 @@ Kelebihan CodeIgniter:
 Catatan: CI 4 membutuhkan minimal PHP versi 7.4
 
 ---
+
+## 3. Struktur Folder CodeIgniter 4
+
+| Folder         | Fungsi                                                      |
+|----------------|-------------------------------------------------------------|
+| `app/`         | Tempat kamu menulis kode (Controller, Model, View)          |
+| `public/`      | Folder yang diakses browser (index.php)                     |
+| `system/`      | Inti dari CodeIgniter (jangan diubah)                       |
+| `writable/`    | Tempat log, cache, upload, dan lainnya                      |
+
+Memahami struktur folder ini sangat penting agar kamu tidak menaruh file di tempat yang salah.
+
+---
+
+## 4. Routing Dasar
+
+Routing adalah proses mengatur URL agar sesuai dengan controller dan method tertentu.
+Semua route diatur di file:
+
+```
+app/Config/Routes.php
+```
+
+Contoh:
+
+```php
+$routes->get('/halo', 'Halo::index');
+```
+
+Artinya, ketika pengguna membuka `localhost/halo`, maka controller `Halo` akan memanggil method `index()`.
+
+---
