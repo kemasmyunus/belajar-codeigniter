@@ -86,3 +86,50 @@ Controller di atas akan memuat view bernama `halo_view.php`.
 
 ---
 
+## 6. View
+
+View adalah bagian dari aplikasi yang menampilkan antarmuka ke pengguna.
+Disimpan di:
+
+```
+app/Views/
+```
+
+Contoh View `halo_view.php`:
+
+```php
+<html>
+<head><title>Halo</title></head>
+<body>
+  <h1>Halo Dunia!</h1>
+</body>
+</html>
+```
+
+View ini akan ditampilkan ketika method `index()` pada controller `Halo` dipanggil.
+
+---
+
+## 7. Koneksi Database
+
+Sebelum membuat model, kita harus mengatur koneksi database di file:
+
+```
+app/Config/Database.php
+```
+
+Contoh konfigurasi:
+
+```php
+public $default = [
+    'hostname' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'nama_database',
+    'DBDriver' => 'MySQLi'
+];
+```
+
+Pastikan nama database sudah dibuat di phpMyAdmin.
+
+---
